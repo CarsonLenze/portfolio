@@ -1,6 +1,6 @@
 import Typist from "react-typist";
 
-export default function Hero() {
+export function Hero() {
 let icons = [
     {
       "id": 0,

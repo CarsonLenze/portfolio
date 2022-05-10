@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import Link from 'next/link';
 
-export default function Navbar() {
+export function Navbar() {
   const [isTop, setIsTop] = useState(true);
   useEffect(() => {
     setIsTop(window.scrollY > 150)
@@ -14,39 +15,43 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg fixed-top navbar-light ${
-        isTop ? "bg-gradient" : "bg-transparent"
-      } `}
+      className={`navbar navbar-expand-lg fixed-top navbar-light ${isTop ? "bg-gradient" : "bg-transparent"
+        } `}
     >
-      <a className="navbar-brand" href="/#home">
-        {`<Carson />`}
-      </a>
+      <Link href="/#home">
+        <a className="navbar-brand">
+          {`<Carson />`}
+        </a>
+      </Link>
 
       <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
           <li className="nav-item">
-            <a
-              className="nav-link lead"
-              href="/#about"
-            >
-              <b>About</b>
-            </a>
+            <Link href="/#about">
+              <a
+                className="nav-link lead"
+              >
+                <b>About</b>
+              </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link lead"
-              href="/#projects"
-            >
-              <b>Projects</b>
-            </a>
+            <Link href="/#projects">
+              <a
+                className="nav-link lead"
+              >
+                <b>Projects</b>
+              </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link lead"
-              href="/#contact"
-            >
-              <b>Contact</b>
-            </a>
+            <Link href="/#contact">
+              <a
+                className="nav-link lead"
+              >
+                <b>Contact</b>
+              </a>
+            </Link>
           </li>
         </ul>
       </div>

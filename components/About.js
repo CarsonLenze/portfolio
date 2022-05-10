@@ -1,13 +1,15 @@
-export default function About() {
+import Image from 'next/image';
+
+export function About() {
 
   return (
     <div id="about" className="jumbotron jumbotron-fluid m-0">
       <div className="container container-fluid p-5">
         <div className="row">
             <div className="col-5 d-none d-lg-block align-self-center">
-              <img
+              <Image
                 className="border border-secondary rounded-circle"
-                src="https://hashirshoaeb.com/home/static/media/hashirshoaeb.32f6b574.png"
+                src="/me.png"
                 alt="profilepicture"
                 width="375"
                 height="375"
@@ -15,7 +17,7 @@ export default function About() {
             </div>
           <div className={`col-lg-7`}>
             <h1 className="display-4 mb-5 text-center">About Me</h1>
-            <p className="lead text-center">My name is Carson Lenze. I'm a sophomore in high school at Hamilton Heights High School and I'm planning on getting a degree in Computer Science at Purdue University. I'm currently a part of a Student organization called Business Professionals of America where I showed my skills in Computer science by Competing and placing first in Python Programing at the annual state conference. In my free time, I like working on discord bots.</p>
+            <p className="lead text-center">My name is Carson Lenze. I&apos;m a sophomore in high school and I&apos;m planning on getting a degree in Computer Science at Purdue University. I&apos;m currently a part of a Student organization called Business Professionals of America and I am currently working towards becoming President of our region. In my free time, I like working on discord bots and making websites just like this one.</p>
               <p className="lead text-center">
                 <a
                   className="btn btn-outline-dark btn-lg"

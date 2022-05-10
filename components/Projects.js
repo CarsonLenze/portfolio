@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import axios from "axios";
 
-export default function Projects() {
+export function Projects() {
 
     const [projectsArray, setProjectsArray] = useState([]);
 
