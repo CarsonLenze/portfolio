@@ -17,7 +17,7 @@ export function About() {
             </div>
           <div className={`col-lg-7`}>
             <h1 className="display-4 mb-5 text-center">About Me</h1>
-            <p className="lead text-center">My name is Carson Lenze. I&apos;m a sophomore in high school and I&apos;m planning on getting a degree in Computer Science at Purdue University. I&apos;m currently a part of a Student organization called Business Professionals of America and I am currently working towards becoming President of our region. In my free time, I like working on discord bots and making websites just like this one.</p>
+            <p className="lead text-center">My name is Carson Lenze. I&apos;m a sophomore in high school and I&apos;m planning on getting a degree in Computer Science at Purdue University. I&apos;m currently a part of a Student organization called Business Professionals of America and I am working towards becoming President of our region. In my free time, I like working on discord bots and making websites just like this one.</p>
               <p className="lead text-center">
                 <a
                   className="btn btn-outline-dark btn-lg"
