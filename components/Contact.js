@@ -99,7 +99,7 @@ export function Contact() {
             id="contactForm"
             className="form rounded-lg bg-white p-3 flex flex-col"
             action="https://api.carsons.site/contact"
-            method="post"
+            method="get"
             target="votar"
             onSubmit={() => {
               let form = document.getElementById("contactForm");
