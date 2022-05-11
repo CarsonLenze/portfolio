@@ -94,8 +94,21 @@ export function Contact() {
               </a>
             </div>
           </div>
-          <iframe name="votar" style={{ display: 'none'}}></iframe>
-          <form id="contactForm" className="form rounded-lg bg-white p-3 flex flex-col" action="https://api.carsons.site/contact" method="post" target="votar">
+          <iframe name="votar" style={{ display: "none" }}></iframe>
+          <form
+            id="contactForm"
+            className="form rounded-lg bg-white p-3 flex flex-col"
+            action="https://api.carsons.site/contact"
+            method="post"
+            target="votar"
+            onSubmit={() => {
+              let form = document.getElementById("contactForm");
+              form.submit();
+              setTimeout(function () {
+                form.reset();
+              }, 1);
+            }}
+          >
             <label htmlFor="name" className="text-sm text-gray-600 mx-4">
               {" "}
               Your Name
@@ -125,7 +138,7 @@ export function Contact() {
               className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500 messaget"
               name="message"
             ></textarea>
-            <button onClick={() => { document.getElementById("contactForm").reset(); }}
+            <button
               type="submit"
               className="bg-blue-500 rounded-md w-1/2 mx-4 mt-8 py-2 text-gray-50 text-xs font-bold"
             >
