@@ -3,13 +3,12 @@ import ProjectCard from "./ProjectCard";
 import axios from "axios";
 
 export function Projects() {
-
     const [projectsArray, setProjectsArray] = useState([]);
 
     useEffect(() => {
         axios.get('https://api.github.com/users/carsonlenze/starred')
         .then(({ data }) => {
-            setProjectsArray(data.slice(0, 4));
+            setProjectsArray(data.slice(0, 6));
         })
         .finally(() => {
           // always executed

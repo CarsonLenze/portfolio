@@ -32,7 +32,7 @@ const ProjectCard = ({ value }) => {
         const monthIndex = date.getMonth();
         const year = date.getFullYear();
 
-        return setUpdatedAt(`on ${day} ${monthNames[monthIndex]} ${year}`);
+        return setUpdatedAt(`on ${monthNames[monthIndex]} ${day}, ${year}`);
       }
     },
     [value.pushed_at]

@@ -31,21 +31,15 @@ code {
 }
 
 .bgstyle {
-  background: radial-gradient(
-      circle at 10% 10%,
+  background: radial-gradient(circle at 10% 10%,
       rgba(245, 164, 227, 0.4) 10%,
-      transparent 10.2%
-    ),
-    radial-gradient(
-      circle at 10% 10%,
+      transparent 10.2%),
+    radial-gradient(circle at 10% 10%,
       rgb(255, 255, 255) 10%,
-      transparent 10.2%
-    ),
-    radial-gradient(
-      circle at 90% 85%,
+      transparent 10.2%),
+    radial-gradient(circle at 90% 85%,
       rgba(94, 226, 255, 0.4) 20%,
-      transparent 20.2%
-    ),
+      transparent 20.2%),
     radial-gradient(circle at 90% 85%, white 20%, transparent 20.2%),
     linear-gradient(200deg, rgb(94, 226, 255) 0%, rgb(245, 164, 227) 60%);
   overflow: overlay;
@@ -97,9 +91,6 @@ code {
   font-size: 75%;
   font-weight: 700;
   line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -115,18 +106,11 @@ code {
   background-color: #f8f9fa;
 }
 
-.pad {
-  padding: 5rem !important;
-}
-.pad2 {
-  padding: 1rem !important;
-}
-
 .border2 {
   border-width: 1px;
 }
 
-.pad3 {
+.marbottom {
   margin-bottom: 0rem !important;
 }
 
@@ -137,4 +121,23 @@ code {
 .contact {
   padding-top: 4rem;
   padding-bottom: 5rem;
+}
+
+.socialdark {
+  color: #000;
+  transition: all 0.8s;
+  padding-left: 1rem;
+  font-size: 2rem;
+}
+
+.socialdark:hover {
+  color: gray;
+}
+
+.contactitems {
+  font-size: 2rem;
+}
+
+.nounder {
+  text-decoration: none !important;
 }
