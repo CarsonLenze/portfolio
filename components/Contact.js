@@ -1,6 +1,10 @@
+import { useState } from 'react';
+
 export function Contact() {
+  const [popup, setPopup] = useState({ open: false, text: ''});
+
   return (
-    <section id="contact">
+    <section id='contact'>
       <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-gray-800 antialiased">
         <h1 className=" text-5xl md:text-9xl font-bold md:text-left contact">
           Contact
@@ -94,33 +98,31 @@ export function Contact() {
               </a>
             </div>
           </div>
-          <iframe onLoad={(data) => {
-            let test = document.getElementById('aftersub')
-            //document.querySelector("body > pre")
-            console.log(test.contentWindow.document)
-            //document.querySelector("html")
-            //parent
-            //var responce = iframe.contentWindow.document.body.innerHTML;
-            //console.log(responce)
-          //   function iframeRef( frameRef ) {
-          //     return frameRef.contentWindow
-          //         ? frameRef.contentWindow.document
-          //         : frameRef.contentDocument
-          // }
-           
-          }} id='aftersub' name="votar" style={{ display: "none" }}></iframe>
+          <iframe id='aftersub' name="votar" style={{ display: "none" }}></iframe>
           <form
             id="contactForm"
             className="form rounded-lg bg-white p-3 flex flex-col"
-            action="https://api.carsons.site/contact"
-            method="get"
             target="votar"
-            onSubmit={() => {
-              let form = document.getElementById("contactForm");
-              form.submit();
-              setTimeout(function () {
-                form.reset();
-              }, 1);
+            onSubmit={async (e) => {
+              e.preventDefault()
+              let form = document.getElementById("contactForm")
+              var formData = new FormData(form)
+              let json = {}
+              for(var pair of formData.entries()) {
+                json[pair[0]] = pair[1];
+             }
+             let data = await fetch('https://api.carsons.site/contact', {
+               method: 'POST',
+               body: JSON.stringify(json)
+             });
+
+             if (data.ok) {
+              alert('Message Sent Successfuly');
+             } else {
+              alert('Message Failed to send');
+             }
+             setPopup({ open: true, text: 'testing'});
+             form.reset();
             }}
           >
             <label htmlFor="name" className="text-sm text-gray-600 mx-4">
