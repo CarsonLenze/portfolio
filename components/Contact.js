@@ -121,20 +121,13 @@ export function Contact() {
                body: JSON.stringify(json),
                headers: { "Content-Type": "application/json" }
              });
+             let message = await data.text();
 
-             if (data.ok) {
-              setPopup({ open: true, text: 'Message Sent Successfully', color: '#00ad4e' });
-              setTimeout(() => {
-                setPopup({ open: false, text: 'Message Sent Successfully', color: '#eaecef' });
-                setTimeout(() => { setPopup({ open: false, text: '', color: '#eaecef'}); }, 2000);
-              }, 4000);
-             } else {
-              setPopup({ open: true, text: 'Message Failed to send', color: '#d62929' });
-              setTimeout(() => {
-                setPopup({ open: false, text: 'Message Failed to send', color: '#eaecef' });
-                setTimeout(() => { setPopup({ open: false, text: '', color: '#eaecef'}); }, 2000);
-              }, 4000);
-             }
+             setPopup({ open: true, text: message, color: data.ok ? '#00ad4e' : '#d62929' });
+             setTimeout(() => {
+              setPopup({ open: false, text: message, color: '#eaecef' });
+              setTimeout(() => { setPopup({ open: false, text: '', color: '#eaecef'}); }, 2000);
+            }, 4000);
 
             form.reset();
             }}
