@@ -135,11 +135,11 @@ code {
 }
 
 .contactitems:hover {
-  color: #fff
+  color: #3b82f6
 }
 
 .contactitems {
-  color: #3b82f6;
+  color: #fff;
   font-size: 2rem;
 }
 
@@ -168,20 +168,21 @@ code {
   margin-bottom: 0rem !important;
 }
 
-@media (max-width: 750px) { 
+@media (max-width: 750px) {
   .contact {
     text-align: center;
     font-size: 5rem;
   }
+
   .icons-container {
     margin-top: 2rem;
     margin-bottom: 3rem;
   }
- }
+}
 
- @media (max-width: 500px) { 
+@media (max-width: 500px) {
   .contact {
     text-align: center;
     font-size: 3rem;
   }
- }
+}
