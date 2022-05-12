@@ -94,7 +94,21 @@ export function Contact() {
               </a>
             </div>
           </div>
-          <iframe name="votar" style={{ display: "none" }}></iframe>
+          <iframe onLoad={(data) => {
+            let test = document.getElementById('aftersub')
+            //document.querySelector("body > pre")
+            console.log(test.contentWindow.document)
+            //document.querySelector("html")
+            //parent
+            //var responce = iframe.contentWindow.document.body.innerHTML;
+            //console.log(responce)
+          //   function iframeRef( frameRef ) {
+          //     return frameRef.contentWindow
+          //         ? frameRef.contentWindow.document
+          //         : frameRef.contentDocument
+          // }
+           
+          }} id='aftersub' name="votar" style={{ display: "none" }}></iframe>
           <form
             id="contactForm"
             className="form rounded-lg bg-white p-3 flex flex-col"
