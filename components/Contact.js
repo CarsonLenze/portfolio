@@ -1,10 +1,14 @@
 import { useState } from 'react';
 
 export function Contact() {
-  const [popup, setPopup] = useState({ open: false, text: ''});
+  const [popup, setPopup] = useState({ open: false, text: '', color: '#eaecef'});
 
   return (
     <section id='contact'>
+      <div className={`popup ${popup.open ? '' : 'closed'}`} style={{ backgroundColor: popup.color, opacity: 0.8 }}>
+        <h1 className='popupText'>{popup.text}</h1>
+
+      </div>
       <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-gray-800 antialiased">
         <h1 className=" text-5xl md:text-9xl font-bold md:text-left contact">
           Contact
@@ -111,18 +115,27 @@ export function Contact() {
               for(var pair of formData.entries()) {
                 json[pair[0]] = pair[1];
              }
+
              let data = await fetch('https://api.carsons.site/contact', {
                method: 'POST',
                body: JSON.stringify(json)
              });
 
              if (data.ok) {
-              alert('Message Sent Successfuly');
+              setPopup({ open: true, text: 'Message Sent Successfully', color: '#00ad4e' });
+              setTimeout(() => {
+                setPopup({ open: false, text: 'Message Sent Successfully', color: '#eaecef' });
+                setTimeout(() => { setPopup({ open: false, text: '', color: '#eaecef'}); }, 2000);
+              }, 4000);
              } else {
-              alert('Message Failed to send');
+              setPopup({ open: true, text: 'Message Failed to send', color: '#d62929' });
+              setTimeout(() => {
+                setPopup({ open: false, text: 'Message Failed to send', color: '#eaecef' });
+                setTimeout(() => { setPopup({ open: false, text: '', color: '#eaecef'}); }, 2000);
+              }, 4000);
              }
-             setPopup({ open: true, text: 'testing'});
-             form.reset();
+
+            form.reset();
             }}
           >
             <label htmlFor="name" className="text-sm text-gray-600 mx-4">

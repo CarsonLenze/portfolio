@@ -141,3 +141,24 @@ code {
 .nounder {
   text-decoration: none !important;
 }
+
+.popup {
+  position: fixed;
+  z-index: 9999;
+  top: 5rem;
+  right: 0px;
+  width: 250px;
+  padding: 20px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  transition: all 1s ease-in-out;
+}
+
+.closed {
+  right: -300px;
+}
+
+.popupText {
+  font-size: 1rem;
+  margin-bottom: 0rem !important;
+}
