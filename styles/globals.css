@@ -134,7 +134,12 @@ code {
   color: gray;
 }
 
+.contactitems:hover {
+  color: #fff
+}
+
 .contactitems {
+  color: #3b82f6;
   font-size: 2rem;
 }
 
@@ -162,3 +167,21 @@ code {
   font-size: 1rem;
   margin-bottom: 0rem !important;
 }
+
+@media (max-width: 750px) { 
+  .contact {
+    text-align: center;
+    font-size: 5rem;
+  }
+  .icons-container {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+ }
+
+ @media (max-width: 500px) { 
+  .contact {
+    text-align: center;
+    font-size: 3rem;
+  }
+ }
