@@ -118,7 +118,8 @@ export function Contact() {
 
              let data = await fetch('https://api.carsons.site/contact', {
                method: 'POST',
-               body: JSON.stringify(json)
+               body: JSON.stringify(json),
+               headers: { "Content-Type": "application/json" }
              });
 
              if (data.ok) {
