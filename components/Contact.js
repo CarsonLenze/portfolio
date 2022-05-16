@@ -7,7 +7,6 @@ export function Contact() {
     <section id='contact'>
       <div className={`popup ${popup.open ? '' : 'closed'}`} style={{ backgroundColor: popup.color, opacity: 0.8 }}>
         <h1 className='popupText'>{popup.text}</h1>
-
       </div>
       <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-gray-800 antialiased">
         <h1 className=" text-5xl md:text-9xl font-bold md:text-left contact">
@@ -116,16 +115,16 @@ export function Contact() {
                 json[pair[0]] = pair[1];
              }
 
-             let data = await fetch('https://api.carsons.site/contact', {
+             let query = await fetch('/api/contact', {
                method: 'POST',
                body: JSON.stringify(json),
                headers: { "Content-Type": "application/json" }
              });
-             let message = await data.text();
+             let data = await query.json();
 
-             setPopup({ open: true, text: message, color: data.ok ? '#00ad4e' : '#d62929' });
+             setPopup({ open: true, text: data.message, color: data.ok ? '#00ad4e' : '#d62929' });
              setTimeout(() => {
-              setPopup({ open: false, text: message, color: '#eaecef' });
+              setPopup({ open: false, text: data.message, color: '#eaecef' });
               setTimeout(() => { setPopup({ open: false, text: '', color: '#eaecef'}); }, 2000);
             }, 4000);
 
