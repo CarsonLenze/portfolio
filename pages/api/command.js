@@ -27,7 +27,7 @@ export default async function command(req, res) {
     try {
         data = await axios.post(`https://discord.com/api/v10/applications/${process.env.PUBLIC_ID}/guilds/${req.query.guild}/commands`, command, { headers: { Authorization: `Bot ${process.env.TOKEN}` } });
     } catch (err) {
-        res.status(400).json({ error: err })
+       return res.status(400).json({ error: err })
     }
     res.status(200).send('Command has been successfully set')
 
