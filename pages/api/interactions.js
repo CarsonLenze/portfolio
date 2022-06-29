@@ -26,24 +26,24 @@ export default async function interactions(req, res) {
         return res.status(401).end('invalid request signature');
     }
 
-    let json = buf.toString()
-    json = JSON.parse(json)
+    // let json = buf.toString()
+    // json = JSON.parse(json)
 
-    if (json.type == 1) {
-        return res.send({
-            "type": 1,
-        })
-    }
+    // if (json.type == 1) {
+    //     return res.send({
+    //         "type": 1,
+    //     })
+    // }
 
-    const { attachments } = json.data.resolved;
-    const attachment = Object.entries(attachments)[0];
+    // const { attachments } = json.data.resolved;
+    // const attachment = Object.entries(attachments)[0];
 
-    res.send({
-        "type": 4,
-        "data": {
-            "content": attachment[1].url
-        }
-    })
+    // res.send({
+    //     "type": 4,
+    //     "data": {
+    //         "content": attachment[1].url
+    //     }
+    // })
 
 
 }
