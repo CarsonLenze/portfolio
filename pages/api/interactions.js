@@ -16,7 +16,7 @@ export default async function interactions(req, res) {
         isVerified = nacl.sign.detached.verify(
             Buffer.from(req.headers['x-signature-timestamp'] + buf),
             Buffer.from(req.headers['x-signature-ed25519'], 'hex'),
-            Buffer.from('47b20d6ba6bff9c2187dd6d5ff9ce03b13231f93287eb1f05304c6eca37a6c28', 'hex')
+            Buffer.from('c4a670480d4426b6c22268ad75a860e4d3ec12b67efe1f6d473935d31dd569f1', 'hex')
         );
     } catch {
         return res.status(401).end('invalid request signature');
