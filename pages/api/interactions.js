@@ -10,9 +10,10 @@ const nacl = require('tweetnacl');
 export default async function interactions(req, res) {
     if (req.method != 'POST') return res.status(400).json({ error: 'Invalid request' });
     const buf = await buffer(req);
+    let isVerified;
 
     try {
-    const isVerified = nacl.sign.detached.verify(
+    isVerified = nacl.sign.detached.verify(
       Buffer.from(req.headers['X-Signature-Timestamp'] + buf),
       Buffer.from(req.headers['X-Signature-Ed25519'], 'hex'),
       Buffer.from(process.env.PUBLIC_KEY, 'hex')
@@ -24,4 +25,18 @@ export default async function interactions(req, res) {
     if (!isVerified) {
       return res.status(401).end('invalid request signature');
     }
+
+    let json = buf.toString();
+    json = JSON.parse(json);
+
+    const { attachments } = json.data.resolved;
+    const attachment = Object.entries(attachments)[0];
+
+    res.send({ 
+        "type": 4,
+        "data": {
+            "content": attachment[1].url
+        } 
+      })
+
 }
