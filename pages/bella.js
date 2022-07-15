@@ -4,7 +4,6 @@ export default function Home({ data }) {
 
     return (
         <div>
-            {data ? data : 'test'}
             <img src="/bella/1.jpg" alt="Simply Easy Learning" ></img>
             <img src="/bella/2.jpg" alt="Simply Easy Learning" ></img>
             <img src="/bella/3.jpg" alt="Simply Easy Learning" ></img>
