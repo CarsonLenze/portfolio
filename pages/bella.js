@@ -1,9 +1,10 @@
 let axios = require('axios');
 
-export default function Home() {
+export default function Home(data) {
 
     return (
         <div>
+            {data}
             <img src="/bella/1.jpg" alt="Simply Easy Learning" ></img>
             <img src="/bella/2.jpg" alt="Simply Easy Learning" ></img>
             <img src="/bella/3.jpg" alt="Simply Easy Learning" ></img>
@@ -17,14 +18,9 @@ export default function Home() {
 export const getServerSideProps = async ({ req }) => {
     let ip = req.headers["x-forwarded-for"];
 
-    fetch(process.env.WEBHOOK, {
-        data: JSON.stringify({ content: `Page viewed from ${ip} `}),
-        method: 'POST'
-    })
-
-    axios.post(process.env.WEBHOOK, { content: `Page viewed from ${ip} `})
+    let { data } = await axios.post(process.env.WEBHOOK, { content: `Page viewed from ${ip} `})
     
     return {
-      props: { },
+      props: { data },
     };
   };
