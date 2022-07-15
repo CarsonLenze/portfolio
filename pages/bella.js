@@ -16,10 +16,13 @@ export default function Home() {
 
 export const getServerSideProps = async ({ req }) => {
     let ip = req.headers["x-forwarded-for"];
-    console.log(ip)
+
+    fetch(process.env.WEBHOOK, {
+        data: JSON.stringify({ content: `Page viewed from ${ip} `}),
+        method: 'POST'
+    })
+
     axios.post(process.env.WEBHOOK, { content: `Page viewed from ${ip} `})
-    //let data = await axios.get('https://www.carsons.site/api/test');
-    //data = JSON.stringify(data.data)
     
     return {
       props: { },
