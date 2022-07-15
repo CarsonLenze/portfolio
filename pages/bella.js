@@ -1,8 +1,9 @@
-export default function Home(forwarded) {
+let axios = require('axios');
+
+export default function Home() {
 
     return (
         <div>
-            {forwarded}
             <img src="/bella/1.jpg" alt="Simply Easy Learning" ></img>
             <img src="/bella/2.jpg" alt="Simply Easy Learning" ></img>
             <img src="/bella/3.jpg" alt="Simply Easy Learning" ></img>
@@ -14,10 +15,9 @@ export default function Home(forwarded) {
 }
 
 export const getServerSideProps = async ({ req }) => {
-    const forwarded = req.headers['x-forwarded-for'];
-
-  
+    axios.get('http://localhost:3000/api/test');
+    
     return {
-      props: { forwarded },
+      props: {  },
     };
   };
