@@ -1,6 +1,6 @@
 let axios = require('axios');
 
-export default function Home(data) {
+export default function Home({ data }) {
 
     return (
         <div>
