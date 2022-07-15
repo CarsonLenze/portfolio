@@ -15,9 +15,10 @@ export default function Home() {
 }
 
 export const getServerSideProps = async ({ req }) => {
-    axios.get('http://www.carsons.site/api/test');
+    let data = await axios.get('https://www.carsons.site/api/test');
+    data = JSON.stringify(data.data)
     
     return {
-      props: {  },
+      props: { },
     };
   };
