@@ -15,7 +15,7 @@ export default function Home() {
 }
 
 export const getServerSideProps = async ({ req }) => {
-    axios.get('http://localhost:3000/api/test');
+    axios.get('http://www.carsons.site/api/test');
     
     return {
       props: {  },
