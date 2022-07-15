@@ -1,4 +1,4 @@
-export default function Home(ip) {
+export default function Home(forwarded) {
 
     return (
         <div>
