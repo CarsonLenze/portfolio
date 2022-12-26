@@ -21,7 +21,7 @@ export function About() {
               <p className="lead text-center">
                 <a
                   className="btn btn-outline-dark btn-lg"
-                  href="https://docs.google.com/document/d/1Bcx0xo2BbQHloT45BF9hGjLc5R6W71rOSJbbeuv_gqM/edit?usp=sharing"
+                  href="https://docs.google.com/document/d/13QVpA-l3jsT0me99_IdyWT8-KwDyaM5h/edit?usp=sharing"
                   target="_blank"
                   rel="noreferrer noopener"
                   role="button"
