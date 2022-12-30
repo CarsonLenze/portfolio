@@ -1,60 +1,27 @@
-import { useState, useEffect } from "react";
-import Link from 'next/link';
+import { Navbar, Spacer, Text, Link } from "@nextui-org/react";
 
-export function Navbar() {
-  const [isTop, setIsTop] = useState(true);
-  useEffect(() => {
-    setIsTop(window.scrollY > 150)
-    window.addEventListener("scroll", () => {
-      const istop = window.scrollY > 150;
-      if (istop != isTop) {
-        setIsTop(istop)
-      }
-    });
-  }, [isTop]);
-
-  return (
-    <nav
-      className={`navbar navbar-expand-lg fixed-top navbar-light ${isTop ? "bg-gradient" : "bg-transparent"
-        } `}
-    >
-      <Link href="/#home">
-        <a className="navbar-brand">
-          {`<Carson />`}
-        </a>
-      </Link>
-
-      <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li className="nav-item">
-            <Link href="/#about">
-              <a
-                className="nav-link lead"
-              >
-                <b>About</b>
-              </a>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link href="/#projects">
-              <a
-                className="nav-link lead"
-              >
-                <b>Projects</b>
-              </a>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link href="/#contact">
-              <a
-                className="nav-link lead"
-              >
-                <b>Contact</b>
-              </a>
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  );
-};
+export function Header() {
+    return (
+        <Navbar variant="sticky" css={{ jc: 'unset' }}>
+            <Navbar.Brand href="#">
+                <Link color="inherit" href="#home">
+                    <Text color="inherit" size="$xl">
+                        {'<Carson />'}
+                    </Text>
+                </Link>
+            </Navbar.Brand>
+            <Spacer x={1} />
+            <Navbar.Content
+                enableCursorHighlight
+                activeColor="primary"
+                hideIn="xs"
+                variant="underline"
+                css={{ marginRight: 'auto' }}
+            >
+                <Navbar.Link href="#about">About</Navbar.Link>
+                <Navbar.Link href="#projects">Projects</Navbar.Link>
+                <Navbar.Link href="#contact">Contact</Navbar.Link>
+            </Navbar.Content>
+        </Navbar>
+    )
+}

@@ -1,67 +1,47 @@
-import Typist from "react-typist";
+import { SiGithub, SiInstagram, SiDiscord, SiTwitter } from "react-icons/si";
+import { styled, Spacer, Button, Text, Link, Grid } from "@nextui-org/react";
+// import Typist from "react-typist";
+
+const Layout = styled("div", {
+    minHeight: '91vh',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column'
+});
+
+function StyledIcon({ Icon, href, props }) {
+    return (
+        <Link target="_blank" href={href} css={{ transition: 'transform .2s', color: 'inherit', '&:hover': { transform: 'translateY(-2px)' }, ...props }}>
+            {Icon}
+        </Link>
+    )
+}
 
 export function Hero() {
-let icons = [
-    {
-      "id": 0,
-      "image": "fa-github",
-      "url": "https://github.com/carsonlenze/",
-      "style": "socialicons"
-    },
-    {
-      "id": 1,
-      "image": "fa-instagram",
-      "url": "https://www.instagram.com/carsonlenze/",
-      "style": "socialicons"
-    },
-    {
-      "id": 2,
-      "image": "fa-discord",
-      "url": "https://discordapp.com/users/404336524491227149/",
-      "style": "socialicons"
-    },
-    {
-      "id": 3,
-      "image": "fa-twitter",
-      "url": "https://www.twitter.com/carsonlenze/",
-      "style": "socialicons"
-    }
-  ]
-
-  return (
-    <div>
-      <div
-        id="home"
-        className="title jumbotron jumbotron-fluid bg-transparent bgstyle text-light min-vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
-      >
-        <div className="container container-fluid text-center ">
-          <h1 className="display-1">Carson Lenze</h1>
-          <Typist className="lead"> | Programmer | Student | Maker | Hacker | Developer </Typist>
-          <div className="p-5">
-            {icons.map((icon) => (
-              <a
-                key={icon.id}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={icon.url}
-                aria-label={`My ${icon.image.split("-")[1]}`}
-              >
-                <i
-                  className={`fab ${icon.image}  fa-3x socialicons`}
-                />
-              </a>
-            ))}
-          </div>
-          <a
-            className="btn btn-outline-light btn-lg"
-            href="#about"
-            role="button"
-            aria-label="Learn more about me"
-          >
-            More about me
-          </a>
+    return (
+        <div id="home" style={{ background: 'radial-gradient(circle at 10% 10%,rgba(245,164,227,.4) 10%,transparent 10.2%),radial-gradient(circle at 10% 10%,#fff 10%,transparent 10.2%),radial-gradient(circle at 90% 85%,rgba(94,226,255,.4) 20%,transparent 20.2%),radial-gradient(circle at 90% 85%,#fff 20%,transparent 20.2%),linear-gradient(200deg,#5ee2ff,#f5a4e3 60%)' }}>
+            <Layout>
+                <Text size="calc(1.625rem + 4.5vw)" weight="light" color="#fff">Carson Lenze</Text>
+                <Text size="$xl" weight="light" color="#fff"> | Programmer | Student | Maker | Hacker | Developer </Text>
+                <Spacer y={1} />
+                <Grid.Container gap={2} justify="center" css={{ color: '$primaryLight' }}>
+                    <Spacer y={0.5} />
+                    <StyledIcon Icon={<SiGithub size={40} />} href='https://github.com/carsonlenze/'/>
+                    <Spacer y={0.5} />
+                    <StyledIcon Icon={<SiInstagram size={40} />} href='https://www.instagram.com/carsonlenze/' />
+                    <Spacer y={0.5} />
+                    <StyledIcon Icon={<SiDiscord size={40} />} href='https://discordapp.com/users/404336524491227149/' />
+                    <Spacer y={0.5} />
+                    <StyledIcon Icon={<SiTwitter size={40} />} href='https://www.twitter.com/carsonlenze/' />
+                    <Spacer y={0.5} />
+                </Grid.Container>
+                <Spacer y={1} />
+                <Link href="#about">
+                    <Button size="lg" color="default" flat css={{ zIndex: 'unset' }}>More about me</Button>
+                </Link>
+            </Layout>
         </div>
-      </div>
-    </div>
-  );
-};
+    )
+}
