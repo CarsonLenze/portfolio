@@ -1,5 +1,10 @@
-body { color: #fff }
-h1 { color: #0ef }
+body { color: #fff; }
+h1 { color: #0ef; }
 .primary-background { background: #1f242d; }
 .secondary-background { background: #323946; }
-/* .custom-header { position: absolute; } */
+.hero-offset { margin-top: -56px; }
+.custom-offcanvas { background: #323946; color: #fff; }
+.nav-brand { color: #fff; }
+.nav-brand:hover { color: #fff; }
+.nav-link { color: #fff; cursor: pointer; }
+.nav-link.active { color: #0ef !important; }
