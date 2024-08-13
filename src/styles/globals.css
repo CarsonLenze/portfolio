@@ -4,7 +4,9 @@ h1 { color: #0ef; }
 .secondary-background { background: #323946; }
 .hero-offset { margin-top: -56px; }
 .custom-offcanvas { background: #323946; color: #fff; }
+.custom-offset { padding-left: 9%; padding-right: 9%; }
 .nav-brand { color: #fff; }
 .nav-brand:hover { color: #fff; }
 .nav-link { color: #fff; cursor: pointer; }
 .nav-link.active { color: #0ef !important; }
+.typer { color: #0ef; }

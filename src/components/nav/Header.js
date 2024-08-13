@@ -6,12 +6,12 @@ export default function Header() {
     const duration = 150;
 
     return (
-        <Navbar sticky="top" className='custom-header' expand="lg" variant="dark">
+        <Navbar sticky="top" className='custom-offset' expand="lg" variant="dark">
             <Container fluid>
             <Navbar.Brand className='nav-brand'>
             <img
               alt="B"
-              src="https://react-bootstrap.netlify.app/img/logo.svg"
+              src="/assets/icon.svg"
               width="30"
               height="30"
               className="d-inline-block align-top"
