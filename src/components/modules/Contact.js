@@ -1,11 +1,11 @@
 import { Container } from 'react-bootstrap';
 
-export default function Projects(props) {
+export default function Contact(props) {
 
     return (
-        <Container fluid className="d-flex align-items-center justify-content-center vh-100">
+        <Container fluid className="d-flex align-items-center justify-content-center vh-100 primary-background">
             <div>
-                <h1>Projects area</h1>
+                <h1>Contact area</h1>
                 <p>This container takes up the full height of the screen.</p>
             </div>
         </Container>

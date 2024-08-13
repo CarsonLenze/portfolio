@@ -1,11 +1,11 @@
 import { Container } from 'react-bootstrap';
 
-export default function Skills(props) {
+export default function Hero(props) {
 
     return (
-        <Container fluid className="d-flex align-items-center justify-content-center vh-100">
+        <Container fluid className="d-flex align-items-center justify-content-center vh-100 primary-background">
             <div>
-                <h1>Skills area</h1>
+                <h1>Hero area</h1>
                 <p>This container takes up the full height of the screen.</p>
             </div>
         </Container>
