@@ -14,7 +14,7 @@ import Footer from "~/components/nav/Footer.js"
 export default function Home() {
   return (
     <>
-    {/* <Header /> */}
+    <Header />
     <Hero />
     <About />
     <Skills />
