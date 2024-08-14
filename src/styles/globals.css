@@ -1,12 +1,90 @@
-body { color: #fff; }
-h1 { color: #0ef; }
-.primary-background { background: #1f242d; }
-.secondary-background { background: #323946; }
-.hero-offset { margin-top: -56px; }
-.custom-offcanvas { background: #323946; color: #fff; }
-.custom-offset { padding-left: 9%; padding-right: 9%; }
-.nav-brand { color: #fff; }
-.nav-brand:hover { color: #fff; }
-.nav-link { color: #fff; cursor: pointer; }
-.nav-link.active { color: #0ef !important; }
-.typer { color: #0ef; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+    --background: 218 18% 18%
+}
+
+html {
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+.navbar-dark {
+    background-color: hsl(var(--background) / .7);
+    backdrop-filter: blur(16px) saturate(1.5)
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.introduction span { color: var(--main-color); }
+.introduction h3:nth-of-type(2) {
+    margin-bottom: 20px;
+}
+.introduction h1 { margin-bottom: 6px; }
+.introduction h1 span {
+    font-weight: 600;
+    
+}
+
+.icon {
+    display: none;
+}
+
+.vertical-align-unset {
+    vertical-align: unset;
+}
+.primary-background {
+    background: #1f242d;
+}
+
+.secondary-background {
+    background: #323946;
+}
+
+.hero-offset {
+    margin-top: -56px;
+}
+
+.custom-offcanvas {
+    background: #323946;
+    color: #fff;
+}
+
+.custom-offset {
+    padding-left: 9%;
+    padding-right: 9%;
+}
+
+.nav-brand {
+    color: #fff;
+}
+
+.nav-brand:hover {
+    color: #fff;
+}
+
+.nav-link {
+    color: #fff; cursor: pointer; padding-left: 2rem !important; font-weight: 500;
+}
+
+.nav-link.active {
+    color: #0ef !important;
+}
